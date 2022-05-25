@@ -1,0 +1,26 @@
+{
+  "name": "poked-x",
+  "version": "1.0.0",
+  "description": "Projeto-2 Blue EdTech",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caio-Rodrigo/Pokedex.git"
+  },
+  "author": "Caio Rodrigo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caio-Rodrigo/Pokedex/issues"
+  },
+  "homepage": "https://github.com/Caio-Rodrigo/Pokedex#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
