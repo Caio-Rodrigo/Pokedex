@@ -13,20 +13,14 @@
         <h1>Pokedex</h1>
     </header>
     <main>
-        <section id="cards">
-            <% pokedex.forEach((pokemon) => { %>
-            <div class="card">
-                <img src="<%= pokemon.imagem %>" alt="">
-                <h2><%= pokemon.nome %></h2>
-                <p class="descricao"><strong>Descrição: </strong><%= pokemon.descricao %></p>
-                <p><strong>Tipo: </strong><%= pokemon.tipo %></p>
-            </div>
-            <% }) %>
-        </section>
 
         <section id="cadastro">
+            <% if (pokemon == undefined){ %>
             <h2>Cadastre um novo Pokemon</h2>
-            <form action="/add" method="post">
+
+            <img src="../img/pokedex.jpg" alt="">
+
+            <form action="/creade" method="post">
 
                 <label for="nome">Nome:</label>
                 <input type="text" id="name" name="nome">
@@ -41,10 +35,48 @@
                 <input type="text" id="imagem" name="imagem">
 
                 <button id="btnCadastrar" type="submit">Cadastrar</button>
-
-
             </form>
+
+            <% }else { %>
+
+                <form action="/update/<%= pokemon.id %>" method="POST">
+
+                    <h2>Atualizar Pokemon</h2>
+
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="name" name="nome" value="<%= pokemon.nome %>">
+    
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" value="<%= pokemon.descricao %>">
+    
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" id="tipo" name="tipo" value="<%= pokemon.tipo %>">
+    
+                    <label for="imagem">Link da Imagem</label>
+                    <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem %>">
+    
+                    <button id="btnAtualizar" type="submit">Atualizar</button>
+                    
+                </form>
+            <% } %>
+            </section>
+
+        <section id="cards">
+
+            <h2>Lista de pokemon</h2>
+
+            <% pokedex.forEach((pokemon) => { %>
+            <div class="card">
+                <img src="<%= pokemon.imagem %>" alt="">
+                <h3><%= pokemon.nome %></h3>
+                <p class="descricao"><strong>Descrição: </strong><%= pokemon.descricao %></p>
+                <p><strong>Tipo: </strong><%= pokemon.tipo %></p>
+                <a href="/detalhes/<%= pokemon.id %>">Editar</a>
+            </div>
+            <% }) %>
         </section>
+
+        
     </main>
 </body>
 </html>
