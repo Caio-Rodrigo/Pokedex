@@ -31,7 +31,7 @@
 
         <img src="../img/pokedex.jpg" alt="" />
 
-        <form action="/creade" method="post">
+        <form action="/create" method="POST">
           <label for="nome">Nome:</label>
           <input type="text" id="name" name="nome" />
 
@@ -49,7 +49,7 @@
 
         <% }else { %>
 
-        <form action="/update/<%= pokemon.id %>" method="POST">
+          <form action="/update/<%= pokemon.id %>" method="POST">
           <h2>Atualizar Pokemon</h2>
 
           <label for="nome">Nome:</label>
