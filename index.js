@@ -46,7 +46,7 @@ app.post("/create", (req, res) => {
   const pokemon = req.body;
   pokemon.id = pokedex.length + 1;
   pokedex.push(pokemon);
-  res.redirect("/");
+  res.redirect("/#cards");
 });
 
 app.get("/detalhes/:id", (req, res) => {
@@ -61,7 +61,16 @@ app.post("/update/:id", (req, res) => {
   newPokemon.id = id + 1;
   pokedex[id] = newPokemon;
   pokemon = undefined;
-  res.redirect("/");
+  res.redirect("/#cards");
+});
+
+app.get("/delete/:id", (req, res) => {
+  const id = +req.params.id - 1;
+
+  delete pokedex[id];
+  pokemon = undefined;
+
+  res.redirect("/#cards");
 });
 
 app.listen(3000, () => console.log("Sevidor rodando em http://localhost:3000"));

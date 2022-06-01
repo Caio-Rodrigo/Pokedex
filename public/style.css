@@ -4,17 +4,48 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
-header {
-  background-color: red;
+nav {
+  background-image: url("./img/logoPoke.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #ef4036;
   padding: 2.5rem;
   text-align: center;
 }
 
-header h1 {
+ nav h1 {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 1.4rem;
+}
+
+ nav ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+ nav ul li{
+  padding: .6rem;
+}
+
+
+ nav ul li a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+header{
+  background: linear-gradient(352deg, rgba(0,0,0,1) 2%, rgba(206,188,209,1) 42%, rgba(111,34,47,1) 83%);
+}
+
+header img{
+  width: 100%;  
+  padding: 3rem 0 3rem;
 }
 
 main {
@@ -36,7 +67,7 @@ section#cards div.card {
   width: 20rem;
 }
 
-section#cards div.card a {
+section#cards div.card a#editar {
   align-items: center;
   background-color: #ffffff;
   border: solid 2px rgb(50, 5, 252);
@@ -55,9 +86,35 @@ section#cards div.card a {
   height: 1.75em;
 }
 
-section#cards div.card a:hover {
+section#cards div.card a#editar:hover {
   background-color: rgb(16, 7, 89);
   border: solid 3px rgb(218, 51, 0);
+  border-radius: 2rem;
+  color: white;
+}
+
+section#cards div.card a#apagar {
+  align-items: center;
+  background-color: #ffffff;
+  border: solid 2px rgb(252, 5, 5);
+  border-radius: 1rem;
+  color: rgb(252, 5, 5);
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1.75rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 50%;
+  height: 1.75em;
+}
+
+section#cards div.card a#apagar:hover {
+  background-color: rgb(176, 4, 4);
+  border: solid 3px rgb(223, 165, 4);
   border-radius: 2rem;
   color: white;
 }
@@ -137,4 +194,27 @@ section#cadastro form button:hover {
   background-color: rgb(44, 36, 36);
   border-radius: 2rem;
   color: white;
+}
+
+footer { 
+  background-color: black;
+  color: #ffffff;
+  padding: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer p{
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size:1.1rem;
+  padding: .6rem;
+}
+
+footer p a{
+  text-decoration: none;
+  color: aquamarine;
 }
