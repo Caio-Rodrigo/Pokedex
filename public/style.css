@@ -7,11 +7,21 @@
   scroll-behavior: smooth;
 }
 
+@media screen and (max-width: 900px)  {
+ 
+  nav ul{
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+}
+
+
 nav {
   background-image: url("./img/logoPoke.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 25%;
   background-color: #ef4036;
   padding: 2.5rem;
   text-align: center;
@@ -143,6 +153,12 @@ section#cadastro {
   flex-wrap: wrap;
   justify-content: center;
   padding: 5rem;
+}
+
+@media screen and (max-width:900px) {
+  section#cadastro{
+    flex-direction: column;
+  }
 }
 
 section#cadastro img {
